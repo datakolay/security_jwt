@@ -1,19 +1,19 @@
 # Generate private and public key.
-$ mkdir -p certificates/
-$ openssl genrsa -out certificates/private.pem -aes256 4096
-$ openssl rsa -pubout -in certificates/private.pem -out certificates/public.pem
+$ mkdir -p certificates/ <br>
+$ openssl genrsa -out certificates/private.pem -aes256 4096 <br>
+$ openssl rsa -pubout -in certificates/private.pem -out certificates/public.pem <br>
 
 # Configure class Security constants.
-PATH_CERTIFICATE_PRIVATE = "";
-PATH_CERTIFICATE_PUBLIC = "";
-SSL_KEY_PASSPHRASE = "";
-TTL = 0; // seconds
+PATH_CERTIFICATE_PRIVATE = ""; <br>
+PATH_CERTIFICATE_PUBLIC = ""; <br>
+SSL_KEY_PASSPHRASE = ""; <br>
+TTL = 0; // seconds <br>
 
 # INCLUDE config .htaccess in your root directory
-RewriteEngine On
-RewriteCond %{HTTP:Authorization} .
-RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteEngine On <br>
+RewriteCond %{HTTP:Authorization} . <br>
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}] <br>
 
 # Use the class Security same as the examples
-examples/login.php
-examples/private_area.php
+examples/login.php <br>
+examples/private_area.php <br>
