@@ -11,7 +11,6 @@ TTL = 0; // seconds
 
 # INCLUDE config .htaccess in your root directory
 RewriteEngine On
-# Sets the HTTP_AUTHORIZATION header removed by apache
 RewriteCond %{HTTP:Authorization} .
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
